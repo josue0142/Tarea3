@@ -1,0 +1,48 @@
+﻿@model Tarea3.Models.Student
+
+<h4>Student</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="StudentId" />
+            <div class="form-group">
+                <label class="control-label">Primer Nombre</label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Primer Apellido</label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Estado</label>
+                <br>
+                <label asp-for="Status" class="">Activar</label>
+                <input type="radio" asp-for="Status" class="" value="1" />
+                <label asp-for="Status" class="">Desactivar</label>
+                <input type="radio" asp-for="Status" class="" value="0" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Carrera</label>
+                <select class="form-control" id="CareerFk" name="CareerFk">
+                    <option value="@ViewBag.Career" selected="selected">@ViewBag.CareerName</option>
+                    @foreach (var item in ViewBag.careers)
+                    {
+                        <option value="@item.CareerId">@item.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver a la lista</a>
+</div>
+
