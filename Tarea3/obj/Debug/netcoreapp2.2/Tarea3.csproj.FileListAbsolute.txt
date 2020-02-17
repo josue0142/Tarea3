@@ -33,3 +33,4 @@ C:\Users\eljos\source\repos\Tarea3\Tarea3\obj\Debug\netcoreapp2.2\Tarea3.csproj.
 C:\Users\eljos\source\repos\Tarea3\Tarea3\obj\Debug\netcoreapp2.2\Razor\Views\Student\Index.cshtml.g.cs
 C:\Users\eljos\source\repos\Tarea3\Tarea3\obj\Debug\netcoreapp2.2\Razor\Views\Student\Add.cshtml.g.cs
 C:\Users\eljos\source\repos\Tarea3\Tarea3\obj\Debug\netcoreapp2.2\Razor\Views\Student\Edit.cshtml.g.cs
+C:\Users\eljos\source\repos\Tarea3\Tarea3\obj\Debug\netcoreapp2.2\Razor\Views\Student\Delete.cshtml.g.cs

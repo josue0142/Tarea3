@@ -122,5 +122,40 @@ namespace Tarea3.Controllers
                 return RedirectToAction("Index");
             }
         }
+
+
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                using (DBStudentsContext db = new DBStudentsContext())
+                {
+                    Student student = db.Student.Find(id);
+                    ViewBag.StudentId = student.StudentId;
+
+                    Career career = db.Career.Find(student.CareerFk);
+                    ViewBag.CareerName = career.Name;                    
+
+                    return View(student);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+
+        public IActionResult Delete2(int id)
+        {
+            using (DBStudentsContext db = new DBStudentsContext())
+            {
+                Student student =  db.Student.Find(id);
+                db.Student.Remove(student);
+                db.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+        }
     }
 }
