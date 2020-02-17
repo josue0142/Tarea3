@@ -1,0 +1,48 @@
+﻿@model Tarea3.Models.Student
+
+@{
+    ViewData["Title"] = "Crear";
+}
+
+<h1>Crear</h1>
+
+<h4>Estudiante</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Add">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Primer Nombre</label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Primer Apellido</label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Carrera</label>
+                <select class="form-control" id="CareerFk" name="CareerFk">
+                    <option value="" selected="selected"></option>
+                    @foreach (var item in ViewBag.careers)
+                    {
+                        <option value="@item.CareerId">@item.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver a la lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

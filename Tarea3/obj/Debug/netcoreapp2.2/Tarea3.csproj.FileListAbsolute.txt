@@ -31,3 +31,5 @@ C:\Users\eljos\source\repos\Tarea3\Tarea3\obj\Debug\netcoreapp2.2\Tarea3.dll
 C:\Users\eljos\source\repos\Tarea3\Tarea3\obj\Debug\netcoreapp2.2\Tarea3.pdb
 C:\Users\eljos\source\repos\Tarea3\Tarea3\obj\Debug\netcoreapp2.2\Tarea3.csproj.CopyComplete
 C:\Users\eljos\source\repos\Tarea3\Tarea3\obj\Debug\netcoreapp2.2\Razor\Views\Student\Index.cshtml.g.cs
+C:\Users\eljos\source\repos\Tarea3\Tarea3\obj\Debug\netcoreapp2.2\Razor\Views\Student\Add.cshtml.g.cs
+C:\Users\eljos\source\repos\Tarea3\Tarea3\obj\Debug\netcoreapp2.2\Razor\Views\Student\CareerList.cshtml.g.cs
