@@ -15,6 +15,7 @@ namespace Tarea3.Models
         {
         }
 
+        public virtual DbSet<Career> Career { get; set; }
         public virtual DbSet<Student> Student { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -30,17 +31,16 @@ namespace Tarea3.Models
         {
             modelBuilder.HasAnnotation("ProductVersion", "2.2.6-servicing-10079");
 
-            modelBuilder.Entity<Student>(entity =>
+            modelBuilder.Entity<Career>(entity =>
             {
-                entity.HasKey(e => e.IdStudent);
-
-                entity.Property(e => e.IdStudent).HasColumnName("Id_Student");
-
-                entity.Property(e => e.Career)
+                entity.Property(e => e.Name)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
+            });
 
+            modelBuilder.Entity<Student>(entity =>
+            {
                 entity.Property(e => e.FirstName)
                     .IsRequired()
                     .HasMaxLength(30)
@@ -55,6 +55,12 @@ namespace Tarea3.Models
                     .IsRequired()
                     .HasMaxLength(2)
                     .IsUnicode(false);
+
+                entity.HasOne(d => d.CareerFkNavigation)
+                    .WithMany(p => p.Student)
+                    .HasForeignKey(d => d.CareerFk)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Student_Career");
             });
         }
     }
